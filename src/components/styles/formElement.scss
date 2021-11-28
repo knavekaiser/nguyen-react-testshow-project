@@ -1,0 +1,90 @@
+@import "variables";
+
+.select-container {
+  position: relative;
+  z-index: 1;
+  border: 1px solid #d5d5d5;
+  padding: 0rem 0.75rem;
+  padding-right: 0;
+  border-radius: 4px;
+  display: flex;
+  width: max-content;
+  align-items: center;
+  font-size: 14px;
+  .value {
+    display: flex;
+    align-items: center;
+    grid-gap: 6px;
+    cursor: pointer;
+  }
+  button {
+    cursor: pointer;
+    padding: 0.6rem 0.8rem;
+  }
+  &.open {
+    button {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  &.secondary {
+    background: #f8f8f8;
+    border: 1px solid #f8f8f8;
+  }
+}
+.select-modal {
+  .options {
+    display: block;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0px 10px 32px rgba(0, 0, 0, 0.2);
+    width: max-content;
+    li {
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      grid-gap: 8px;
+      cursor: pointer;
+      &:hover {
+        background: rgba(0, 0, 0, 0.02);
+      }
+      .tick {
+        display: none;
+      }
+      &.selected {
+        .tick {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+.select-backdrop {
+  background: rgba(255, 255, 255, 0) !important;
+}
+.searchbox {
+  position: relative;
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+  }
+  input {
+    width: 20rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    padding-left: 2.25rem;
+    background: #f4f4f4;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    &::placeholder {
+      font-size: 0.8rem;
+    }
+    &:focus {
+      background: rgba(0, 0, 0, 0.09);
+    }
+  }
+}
